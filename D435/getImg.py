@@ -1,6 +1,7 @@
 import cv2
 import pyrealsense2
 from realsense_depth import *
+import time
 
 def saveImg(dc,point,depth = False):
     ret, depth_frame, color_frame = dc.get_frame()
@@ -36,4 +37,5 @@ def getDepthImg(dc):
 if __name__ == '__main__':
     dc = DepthCamera()
     point = (400, 300)
+    time.sleep(3)
     saveImg(dc,point)
