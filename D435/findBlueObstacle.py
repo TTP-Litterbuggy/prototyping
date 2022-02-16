@@ -7,9 +7,9 @@ import cv2
 
 
 
-def findBlueObj(imagePath):
+def findBlueObj(image):
     #Load image
-    image = cv2.imread(imagePath)
+    # image = cv2.imread(imagePath)
     original = image.copy()
 
     #Convert image into HSV and set range for yellow object
@@ -52,9 +52,9 @@ def findBlueObj(imagePath):
     return coord
     
 
-if __name__ == '__main__':
-    testImagePath = './testImages/color_frame.jpg'
-    rect = findBlueObj(testImagePath)
-    # for r in rect:
+# if __name__ == '__main__':
+#     testImagePath = './testImages/color_frame.jpg'
+#     rect = findBlueObj(testImagePath)
+#     # for r in rect:
         
         
