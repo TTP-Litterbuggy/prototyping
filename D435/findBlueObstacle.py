@@ -16,8 +16,14 @@ def findBlueObj(image):
     # cv2.imshow('image',image)
     # hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
     hsv = cv2.cvtColor(image, cv2.COLOR_BGR2HSV)
-    lower_blue = np.array([92,214,59])
-    upper_blue = np.array([112,234,139])
+    # lower_blue = np.array([92,214,59])
+    # upper_blue = np.array([112,234,139])
+    # lower_blue = np.array([95,255,104])
+    # upper_blue = np.array([112,255,192])
+    lower_blue = np.array([93,255,74]) #Hallway porter 1.6m
+    upper_blue = np.array([115,255,154])
+    # lower_blue = np.array([84,255,49]) #Hallway porter far 
+    # upper_blue = np.array([125,230,163])
 
     #Generate a mask
     mask = cv2.inRange(hsv, lower_blue, upper_blue)
@@ -31,8 +37,8 @@ def findBlueObj(image):
     for c in cnts:
         x,y,w,h = cv2.boundingRect(c)
         
-        if (w*h < 200):continue #threshold small noises
-        const = 8
+        # if (w*h < 50):continue #threshold small noises
+        const = 0
         x -= const
         y -= const
         w += const
