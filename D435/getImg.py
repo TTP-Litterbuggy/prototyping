@@ -21,6 +21,8 @@ def saveImg(dc,point,depth = False):
     return 0
 
 def getD435Img(dc):
+    print('Taking picture ... ')
+    time.sleep(3)
     _, depth_frame, color_frame = dc.get_frame()
     # distance = depth_frame[point[1], point[0]]
     # depth_frame = (depth_frame/256).astype(np.uint8)
@@ -30,6 +32,7 @@ def getD435Img(dc):
     # cv2.imshow("Depth_Frame", depth_frame)
     # cv2.waitKey(0)
     # print(np.max(depth_frame))
+    print('Got picture.\n')
 
     return depth_frame,color_frame
 

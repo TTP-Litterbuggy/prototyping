@@ -9,11 +9,11 @@ from getImg import *
 #To be finished
 
 def getObstcaleDistance(img,depth_frame):
-    visualize = False #Show result image 
+    visualize = True #Show result image 
     #Gets the coord of the blue obstacle bounding box
     coord = findBlueObj(img) #return the 4 corners for multiple bbox.
     centerCoord = getCenterCoord(coord)
-    print('Center Coord: ',centerCoord)
+    # print('Center Coord: ',centerCoord)
     if visualize:
         cv2.circle(img,centerCoord,2,(0,0,255),2)
         cv2.imshow('img',img)
@@ -26,6 +26,7 @@ def getObstcaleDistance(img,depth_frame):
 if __name__ == '__main__':
     dc = DepthCamera()
     depth_frame,color_frame = getD435Img(dc)
-    getObstcaleDistance(color_frame,depth_frame)
+    dist = getObstcaleDistance(color_frame,depth_frame)
+    print('The range to the obstacle is : ',dist)
 
 
