@@ -12,8 +12,8 @@ def saveImg(dc,point,depth = False):
 
     cv2.imshow("Color frame", color_frame)
     cv2.waitKey(0)
-    print(color_frame)
-    print(np.max(color_frame))
+    # print(color_frame)
+    # print(np.max(color_frame))
     cv2.imwrite('color_frame.jpg',color_frame)
     if depth:
         cv2.imwrite('depth_frame.jpg',depth_frame)
